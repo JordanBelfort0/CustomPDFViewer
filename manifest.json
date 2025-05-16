@@ -1,12 +1,17 @@
 {
-  "name": "PDF Custom Viewer",
+  "name": "PDF Viewer Extension",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["webRequest", "webRequestBlocking", "tabs"],
+  "permissions": ["tabs", "scripting"],
   "host_permissions": ["<all_urls>"],
-  "background": {
-    "service_worker": "background.js"
-  },
+  
+  "content_scripts": [
+    {
+      "matches": ["*://*/*.pdf"],
+      "js": ["pdfContentScript.js"],
+      "run_at": "document_start"
+    }
+  ],
   "web_accessible_resources": [
     {
       "resources": ["viewer.html", "pdfjs/*"],

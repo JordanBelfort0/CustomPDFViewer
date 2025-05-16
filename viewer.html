@@ -1,5 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom PDF Viewer</title>
+  <style>
+    /* Basic styling for the canvas */
+    body {
+      margin: 0;
+      overflow: auto;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #pdfCanvas {
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
 <body>
   <canvas id="pdfCanvas"></canvas>
-  <script src="pdfjs/pdf.js"></script>
-  <script src="viewer.js"></script>
+  <!-- Load the PDF.js library from the local pdfjs folder -->
+  <script src="pdfjs/pdf.mjs"></script>
+  <!-- Load your custom viewer script -->
+  <script type="module" src="viewer.js"></script>
 </body>
+</html>
