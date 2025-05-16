@@ -1,0 +1,16 @@
+{
+  "name": "PDF Custom Viewer",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["webRequest", "webRequestBlocking", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["viewer.html", "pdfjs/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
